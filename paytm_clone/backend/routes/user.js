@@ -1,10 +1,10 @@
-const express = require("exxpress");
+const express = require("express");
 const jwt = require("jsonwebtoken");
 const {User, account} = require("../db")
 const zod = require("zod");
 const router = express.Router();
 const {JWT_TOKEN} = require("../config");
-const { authMiddleware } = require("../middlewares/middleware");
+const { authMiddleware } = require("../middlewares/authMiddleware");
 
 const signUp = zod.object({
     firstName: zod.string(),
