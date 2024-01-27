@@ -9,4 +9,6 @@ app.use("/api/v1", router);
 
 
 
-app.listen(3000);
+app.listen(3000,()=>{
+    console.log("port connected")
+});

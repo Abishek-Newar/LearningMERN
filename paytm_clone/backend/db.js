@@ -1,6 +1,12 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb+srv://Abishek_Newar:Abishek2002@cluster0.kkrveku.mongodb.net/paytm-clone");
+mongoose.connect("mongodb+srv://Abishek_Newar:Abishek2002@cluster0.kkrveku.mongodb.net/paytm-clone")
+.then(()=>{
+    console.log("mongoose connected")
+})
+.catch(()=>{
+    console.log("failed")
+})
 
 const UserSchema = new mongoose.Schema({
     firstName: {

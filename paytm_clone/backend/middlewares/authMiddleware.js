@@ -1,11 +1,11 @@
 
 const jwt = require("jsonwebtoken");
 
-const {JWT_TOKEN} = require("../config")
+const JWT_TOKEN = require("../config")
 
-const authMiddleware = (res,req,next)=>{
-    const header = req.headers.authorization;
-    const words = header.split(" ");
+function authMiddleware(req,res,next){
+    const authHeader = req.headers.authorization;
+    const words = authHeader.split(" ");
     const token = words[1];
     const decoded = jwt.verify(token,JWT_TOKEN)
     try{
