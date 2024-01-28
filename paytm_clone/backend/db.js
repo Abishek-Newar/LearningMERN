@@ -1,8 +1,11 @@
 const mongoose  = require("mongoose")
 
-mongoose.connect("url");
+mongoose.connect("mongodb+srv://Abishek_Newar:Abishek2002@cluster0.kkrveku.mongodb.net/paytm-clone")
+.then(()=>{
+    console.log("mogoDb connected")
+})
 
-const userSchema = new Schema({
+const userSchema = new mongoose.Schema({
     firstName: String,
     lastName: String,
     username: String,
@@ -10,9 +13,9 @@ const userSchema = new Schema({
 })
 
 
-const accountSchema = new Schema({
+const accountSchema = new mongoose.Schema({
     userId:{
-        type: mongoose.Schema.Types.ObjectId;
+        type: mongoose.Schema.Types.ObjectId,
         ref: "User",
         required:true
     },
@@ -23,7 +26,7 @@ const accountSchema = new Schema({
 
 })
 
-const account = mongoose.model("account",accountSchema);
+const account = mongoose.model("accout",accountSchema);
 const User = mongoose.model("User",userSchema);
 
 module.exports = {
