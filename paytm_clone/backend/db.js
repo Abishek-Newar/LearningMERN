@@ -1,6 +1,6 @@
 const mongoose  = require("mongoose")
 
-mongoose.connect("mongodb+srv://Abishek_Newar:Abishek2002@cluster0.kkrveku.mongodb.net/paytm-clone")
+mongoose.connect("url")
 .then(()=>{
     console.log("mogoDb connected")
 })
